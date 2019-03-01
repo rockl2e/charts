@@ -35,7 +35,7 @@ def main():
     mirror_url = os.environ.get("MIRROR_URL", default_mirror)
     index_file = "index.yaml"
     wget(chart_url + index_file, index_file)
-    with open(index_file) as f:
+    with open(index_file, encoding='utf-8') as f:
         index = yaml.load(f)
     entries = index["entries"]
     new = index.copy()
